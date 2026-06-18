@@ -1,2 +1,3 @@
 # FromScratch
-Learning Python by doing
+This is my first repository learning Python by doing.
+
