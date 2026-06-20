@@ -5,13 +5,15 @@ Without using any string methods, try to print the following:
 1,2,3...n
 
 Note that "..." represents the consecutive values in between.
+Example
+n = 5
+Print the string 1 2 3 4 5.
 """
 
-n = int(input("N: "))
+def value(a):
+    for i in range( 1, a+1 ):
+        print(i, end="")
 
-i = 1
+number = int(input("Choose a number: "))
 
-while i <= n:
-    print(i)
-    i+=1
-
+value(number)
