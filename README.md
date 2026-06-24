@@ -20,3 +20,10 @@ https://www.practicepython.org/
 │   └── weather_checker/
 │
 └── README.md
+
+https://www.credly.com/badges/acbcb8bb-7f9d-4b73-9cf3-488c4a524916/linked_in_profile
+
+AWS Certified Cloud Practitioner
+Amazon Web Services (AWS)
+feb 2024
+feb 2027
