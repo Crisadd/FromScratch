@@ -16,11 +16,13 @@ def main():
         print("Odd")
 
 def is_even(n):
-    if n % 2 == 0:  # Boolean
-        return True
-    else:
-        return False
+    #if n % 2 == 0:  # Boolean
+    #    return True
+    #else:
+    #    return False
+    
+    # Other WAY: return True if n % 2 == 0 else False
 
-########################################## 42 minutos.38 segundos
-
+    #Other WAY:
+    return n % 2 == 0
 main()
