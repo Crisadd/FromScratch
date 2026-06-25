@@ -2,60 +2,42 @@
 Practice Problem: Iterate through the first 10 numbers (0–9). In each iteration, print the current number, the previous number, 
 and their sum.
 """
-# Current Number: 0 Previous Number: 0 Sum: 0
+# Ask the user for the last number to count
+def get_number():
+    number_to_count = int(input('Enter the last number: '))
+    return number_to_count
+
+
+# Print the table header
+def print_header():
+    print(f'Current\t\tPrevious\tSum ')
+    print('----------------------------------------------')
+
+
+# Print the current number, previous number, and their sum.
+def counter():
+    number = get_number()
+    print_header()
+
+    for current_number in range(0, number+1):
+        previous_number = current_number -1
+        
+        if current_number == 0:
+            previous_number = 0
+        
+        total = current_number + previous_number
+
+        print(f"{current_number}\t\t{previous_number}\t\t{total}")
+
+
 
 def main():
-    #
+    counter()
 
 main()
 
 
-
 """
-Nivel 1 ⭐
-
-Resolver exactamente el ejercicio.
-
-Nada más.
-
-Nivel 2 ⭐⭐
-
-Hacer que el usuario elija hasta qué número contar.
-
-En vez de siempre:
-
-range(10)
-
-preguntar:
-
-Enter the last number:
-
-Si pone
-
-15
-
-el programa llega hasta 15.
-
-Nivel 3 ⭐⭐⭐
-
-Mostrar una tabla prolija.
-
-En vez de:
-
-0 0 0
-1 0 1
-2 1 3
-
-hacer algo como:
-
-Current   Previous   Sum
--------------------------
-0         0          0
-1         0          1
-2         1          3
-3         2          5
-
-Vas a practicar el formateo de texto.
 
 Nivel 4 ⭐⭐⭐
 
