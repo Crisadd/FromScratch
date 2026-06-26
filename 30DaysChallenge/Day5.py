@@ -21,17 +21,17 @@ def ask_to_continue():
         print(f'Result to {first_number} {arithmetic} {second_number} = {result}')
         print('*************************************************************')
         answer = input('Would you like to continue? yes/no: ').lower()
-    
+
         while answer not in ("yes", "no"):
             answer = input('Would you like to continue? yes/no: ').lower()
-        
+
         if answer == 'yes':
             Operation_count +=1
             continue
         else:
             print('Thanks for using this program!')
             break
-    
+
 
 """
     Return the product of two numbers if it is less than or equal to 1000.
