@@ -10,13 +10,25 @@ print the value of your variable on a second line.
 
 You've got this!
 """
+def ejecutar():
+    print('+~~~~~~~~~~~~~~~~~~~~ Day 1 ~~~~~~~~~~~~~~~~~~~~+')
+    print('First day working with Python')
+    while True:
 
-# Read a full line of input from stdin and save it to our dynamically typed variable, input_string.
-input_string = input()
+        # Read a full line of input from stdin and save it to our dynamically typed variable, input_string.
+        input_string = input('Write something: ')
+        # Print a string literal saying "Hello, World." to stdout.
+        print('Hello, World.')
+        # TODO: Write a line of code here that prints the contents of input_string to stdout.
+        print(input_string)
 
-# Print a string literal saying "Hello, World." to stdout.
-print('Hello, World.')
+        answer = input('Would you like to continue? y/n: '.lower())
 
-# TODO: Write a line of code here that prints the contents of input_string to stdout.
+        while answer not in ("y","n"):
+            answer = input('Would you like to continue? y/n: '.lower())
 
-print(input_string)
+        if answer == "y":
+            continue
+        else:
+            break
+    print('+~~~~~~~~~~~~~~~~~~~~ END ~~~~~~~~~~~~~~~~~~~~+')
