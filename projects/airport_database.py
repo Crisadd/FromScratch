@@ -80,4 +80,31 @@ SABE - Aeroparque
 ...
 
 Ese ejercicio te va a obligar a aprender a recorrer un diccionario, que es el siguiente paso natural después de saber buscar por clave.
+Un desafío extra (sin decirte cómo hacerlo)
+
+Cuando termines el menú, agregale estas opciones:
+
+===== AIRPORT DATABASE =====
+
+1 - Search airport by ICAO
+2 - Show all airports
+3 - Add a new airport
+4 - Delete an airport
+5 - Count airports
+0 - Exit
+
+Con ese solo programa vas a practicar:
+
+✅ Diccionarios (dict)
+✅ if
+✅ while
+✅ for
+✅ Funciones
+✅ Menús
+✅ Validación de datos
+✅ Agregar elementos a un diccionario
+✅ Eliminar elementos de un diccionario
+✅ Recorrer un diccionario
+
+Ese proyecto ya se parece bastante a un programa real de consola y es un excelente ejercicio antes de pasar a temas más avanzados como archivos o APIs.
 """
