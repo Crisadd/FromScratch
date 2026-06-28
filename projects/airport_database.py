@@ -1,22 +1,11 @@
 """ Build a small airport database.
 
 Requirements:
-
-Store at least 10 ICAO airport codes.
-Ask the user to enter an ICAO code.
-Print the airport name.
-If the code doesn't exist, print:
-Airport not found.
-"""
-""" Build a small airport database.
-
-Requirements:
-
-Store at least 10 ICAO airport codes.
-Ask the user to enter an ICAO code.
-Print the airport name.
-If the code doesn't exist, print:
-Airport not found.
+- Store at least 10 ICAO airport codes.
+- Ask the user to enter an ICAO code.
+- Print the airport name.
+- If the code doesn't exist, print:
+    * Airport not found.
 """
 airport_database = {
     'SABE': 'Buenos Aires - Aeroparque Jorge Newbery',
@@ -57,7 +46,6 @@ airport_database = {
 }
 def get_code():
     icao_code = input('Enter an ICAO code: ').upper()
-
     return icao_code
 
 def searching_code(code):
@@ -66,20 +54,47 @@ def searching_code(code):
     else:
         print('Airport not found.')
 
+def show_dictionary():
+    for key, value in airport_database.items():
+        print(f'{key} - {value}')
+
+def add_new_airport():
+    new_airport_icao = input('ICAO airport to add: ').upper()
+    new_airport_name = input('Name of the new airport: ')
+    print(f'The new airport "{new_airport_icao} - {new_airport_name}" has been added successfully\n')
+    airport_database.update({new_airport_icao : new_airport_name})
+
 def main():
     quantity_of_searches = 0
     while True:
-        icao_code = get_code()
-        searching_code(icao_code)
-        quantity_of_searches +=1
+        print('========= MENU =========')
+        print('1 - Search airport by ICAO')
+        print('2 - Show all airports')
+        print('3 - Add a new airport')
+        print('0 - Exit')
+        option = int(input('Option: '))
 
-        answer = input('Would you like to continue searching? y/n: ')
-        
-        while answer not in ('y','n'):
-            answer = input('Would you like to continue searching? y/n: ')
+        if option == 1:
+            while True:
+                icao_code = get_code()
+                searching_code(icao_code)
+                quantity_of_searches +=1
 
-        if answer != 'y':
-            print(f'You have done {quantity_of_searches} search/es.\nGoodbye')
+                answer = input('Would you like to continue searching? y/n: ')
+
+                while answer not in ('y','n'):
+                    answer = input('Would you like to continue searching? y/n: ')
+
+                if answer != 'y':
+                    print(f'>>>>>>>>>>>> You have done {quantity_of_searches} search/es. <<<<<<<<<<<<\n\t\tGoodbye')
+                    break
+        elif option == 2:
+            show_dictionary()
+        elif option == 3:
+            add_new_airport()
+
+        else:
+            print('Thank you for using this program.')
             break
 
 if __name__ == "__main__":

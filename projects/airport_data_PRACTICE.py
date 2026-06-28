@@ -1,12 +1,11 @@
 """ Build a small airport database.
 
 Requirements:
-
-Store at least 10 ICAO airport codes.
-Ask the user to enter an ICAO code.
-Print the airport name.
-If the code doesn't exist, print:
-Airport not found.
+- Store at least 10 ICAO airport codes.
+- Ask the user to enter an ICAO code.
+- Print the airport name.
+- If the code doesn't exist, print:
+    * Airport not found.
 """
 airport_database = {
     'SABE': 'Buenos Aires - Aeroparque Jorge Newbery',
@@ -47,7 +46,6 @@ airport_database = {
 }
 def get_code():
     icao_code = input('Enter an ICAO code: ').upper()
-
     return icao_code
 
 def searching_code(code):
@@ -56,12 +54,23 @@ def searching_code(code):
     else:
         print('Airport not found.')
 
+def show_dictionary():
+    for key, value in airport_database.items():
+        print(f'{key} - {value}')
+
+def add_new_airport():
+    new_airport_icao = input('ICAO airport to add: ').upper()
+    new_airport_name = input('Name of the new airport: ')
+    print(f'The new airport "{new_airport_icao} - {new_airport_name}" has been added successfully\n')
+    airport_database.update({new_airport_icao : new_airport_name})
+
 def main():
     quantity_of_searches = 0
     while True:
         print('========= MENU =========')
-        print('1 - Search airport')
+        print('1 - Search airport by ICAO')
         print('2 - Show all airports')
+        print('3 - Add a new airport')
         print('0 - Exit')
         option = int(input('Option: '))
 
@@ -72,14 +81,18 @@ def main():
                 quantity_of_searches +=1
 
                 answer = input('Would you like to continue searching? y/n: ')
-            
+
                 while answer not in ('y','n'):
                     answer = input('Would you like to continue searching? y/n: ')
 
                 if answer != 'y':
-                    print(f'You have done {quantity_of_searches} search/es.\nGoodbye')
+                    print(f'>>>>>>>>>>>> You have done {quantity_of_searches} search/es. <<<<<<<<<<<<\n\t\tGoodbye')
                     break
-        
+        elif option == 2:
+            show_dictionary()
+        elif option == 3:
+            add_new_airport()
+
         else:
             print('Thank you for using this program.')
             break
@@ -96,26 +109,11 @@ else:
     print("Airport not found.")
 
 
-Ideas mias: 
-imprimir todos los aeropuertos que busco, eso es ponerlo en una lista. 
+Ideas mias:
+imprimir todos los aeropuertos que busco, eso es ponerlo en una lista.
                                             Imprmir cuantas busquedas realizo
 
-===== Airport Database =====
-1 - Search airport
-2 - Show all airports
-0 - Exit
 
-Y cuando el usuario elija 2, mostrar algo como:
-
-SADF - San Fernando
-SADM - Morón
-SABE - Aeroparque
-...
-
-Ese ejercicio te va a obligar a aprender a recorrer un diccionario, que es el siguiente paso natural después de saber buscar por clave.
-Un desafío extra (sin decirte cómo hacerlo)
-
-Cuando termines el menú, agregale estas opciones:
 
 ===== AIRPORT DATABASE =====
 

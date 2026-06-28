@@ -1,4 +1,8 @@
 #Dictionaries are keys and values. Example: "name":"value"
+# .keys(): Iterates over keys only.
+# .values(): Iterates over values only.
+# .items(): Iterates over both keys and values as tuples
+
 """     {
     "name":"value"
     "name":"voyager1",
