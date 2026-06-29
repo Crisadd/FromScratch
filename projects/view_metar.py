@@ -15,7 +15,7 @@ Detect:
     Temperature: 8°C
     IFR conditions likely.
 """
-metar = input('Paste the METAR: ')
+#metar = input('Paste the METAR: ')
 
 airports = {
     'SABE': 'Buenos Aires - Aeroparque Jorge Newbery',
@@ -24,6 +24,12 @@ airports = {
     'SADM': 'Morón',
 }
 
+name = "SADF"
 def main():
-    ..
+    for key, value in airports.items():
+        if key == name:
+            print(f'{key} - {value}')
+        else:
+            print('Airport not found.')
+
 main()
