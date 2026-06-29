@@ -1,10 +1,11 @@
-import flight_distance_calculator, airport_database
+import flight_distance_calculator, airport_database, view_metar
 
 # answers = [1,2,3,4,5,6,7,8,9,10]
 while True:
     print('========= MENU =========')
     print('1 - Flight Distance Calculator')
     print('2 - Small Airport Database')
+    print('3 - Metar Visibility Checker')
 
     print('0 - Exit')
     print('========================')
@@ -14,9 +15,11 @@ while True:
 
     if answer == 1:
         flight_distance_calculator.main()
-    
     elif answer == 2:
         airport_database.main()
+    elif answer == 3:
+        view_metar.main()
+
 
     elif answer == 0:
         print("Goodbye!")

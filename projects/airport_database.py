@@ -61,8 +61,17 @@ def show_dictionary():
 def add_new_airport():
     new_airport_icao = input('ICAO airport to add: ').upper()
     new_airport_name = input('Name of the new airport: ')
-    print(f'The new airport "{new_airport_icao} - {new_airport_name}" has been added successfully\n')
     airport_database.update({new_airport_icao : new_airport_name})
+    print(f'The new airport "{new_airport_icao} - {new_airport_name}" has been added successfully\n')
+
+def delete_airport():
+    delete_airport_icao = input('ICAO airport to delete: ').upper()
+    airport  = airport_database.pop(delete_airport_icao, None)
+
+    if airport  == None:
+        print('Airport not found.')
+    else:
+        print(f'Airport {delete_airport_icao} has been deleted successfully\n')
 
 def main():
     quantity_of_searches = 0
@@ -71,6 +80,9 @@ def main():
         print('1 - Search airport by ICAO')
         print('2 - Show all airports')
         print('3 - Add a new airport')
+        print('4 - Delete an airport')
+        print('5 - Total airports')
+
         print('0 - Exit')
         option = int(input('Option: '))
 
@@ -83,7 +95,7 @@ def main():
                 answer = input('Would you like to continue searching? y/n: ')
 
                 while answer not in ('y','n'):
-                    answer = input('Would you like to continue searching? y/n: ')
+                    answer = input('Would you like to continue searching? y/n: ').lower()
 
                 if answer != 'y':
                     print(f'>>>>>>>>>>>> You have done {quantity_of_searches} search/es. <<<<<<<<<<<<\n\t\tGoodbye')
@@ -92,10 +104,24 @@ def main():
             show_dictionary()
         elif option == 3:
             add_new_airport()
-
-        else:
+        elif option == 4:
+            delete_airport()
+        elif option == 5:
+            print(f'Total airports: {len(airport_database)}')
+        elif option == 0:
             print('Thank you for using this program.')
             break
+        else:
+            print('Invalid option. Try again.')
 
 if __name__ == "__main__":
     main()
+
+
+""" Pythonic way
+airport = airport_database.get(get_code)
+if airport:
+    print(airport)
+else:
+    print("Airport not found.")
+"""
