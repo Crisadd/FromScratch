@@ -11,12 +11,14 @@ HINT
         for c in s:
             print(c, end="")
 """
-texts = input('Tweeting: ').lower()
+texts = input('Tweeting: ')
 
 tweet = []
 
+vocals = {'a','e','i','o','u'}
+
 for i in texts:
-    if i not in ('a','e','i','o','u'):
+    if i.lower() not in vocals:    #('a','e','i','o','u'):
         tweet.append(i)
     else:
         continue
