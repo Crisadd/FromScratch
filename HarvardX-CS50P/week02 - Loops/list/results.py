@@ -5,6 +5,8 @@ results = ["Mario", "Luigi"]
 # .extend() each element of the new list append into the list insteod of adding the complete list, it add each element
 # .insert(0, "") Insert a new element into the list. The first number is the position of the list
 # .reverse() flip the list
+# .pop() remove the last item from my list
+# . clear() remove the entirity of the list
 
 results.append("Princess")
 results.append("Yoshi")
