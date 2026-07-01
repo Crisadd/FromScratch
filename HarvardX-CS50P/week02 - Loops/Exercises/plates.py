@@ -18,25 +18,30 @@ For instance, if s is "CS50", then s[0:2] would be "CS".
 """
 
 vanity_plate = input('Vanity Plate: ').upper()
+
 numbers = {'0','1','2','3','4','5','6','7','8','9'}
 verification = True
 
-#print(len(vanity_plate))
+found_number = False
 
 
 if len(vanity_plate) >=2 and len(vanity_plate) <= 6:
     
     if vanity_plate[0] not in numbers and vanity_plate[1] not in numbers:
-        verification = True 
+        
+        for i in vanity_plate:
+            if i in numbers:
+                if i == '0':
+                    found_number= True
+            
 
     else:
-        print('nono')
         verification = False
 
 else:
     verification = False
 
-
+print(verification)
 
 #is_valid returns True if s meets all requirements and False if it does not.
 
